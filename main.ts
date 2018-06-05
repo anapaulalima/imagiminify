@@ -1,5 +1,5 @@
-const imagemin = require('imagemin');
-const imageminWebp = require('imagemin-webp');
+import * as imagemin from 'imagemin';
+import * as imageminWebp from 'imagemin-webp';
 import { ArgumentParser } from 'argparse';
 import * as shell from 'shelljs';
 
