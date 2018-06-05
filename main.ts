@@ -1,5 +1,5 @@
-const imagemin = require('imagemin');
-const imageminWebp = require('imagemin-webp');
+import * as imagemin from 'imagemin';
+import * as imageminWebp from 'imagemin-webp';
 import { ArgumentParser } from 'argparse';
 import * as shell from 'shelljs';
 
@@ -24,9 +24,9 @@ const pathDir = shell.pwd().stdout as string;
  
 imagemin([pathDir+'/*.{jpg,png}'], pathDir, {
     use: [
-        imageminWebp({lossless: true})
+        imageminWebp({quality: 50})
     ]
 }).then(() => {
     console.log('Images optimized');
-    shell.rm('-r', pathDir+'/*.{jpg, png}');
+    shell.rm('-r', pathDir+'/*.{jpg,png}');
 });
