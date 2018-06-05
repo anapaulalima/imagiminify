@@ -24,9 +24,9 @@ const pathDir = shell.pwd().stdout as string;
  
 imagemin([pathDir+'/*.{jpg,png}'], pathDir, {
     use: [
-        imageminWebp({lossless: true})
+        imageminWebp({quality: 50})
     ]
 }).then(() => {
     console.log('Images optimized');
-    shell.rm('-r', pathDir+'/*.{jpg, png}');
+    shell.rm('-r', pathDir+'/*.{jpg,png}');
 });
